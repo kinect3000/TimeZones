@@ -20,8 +20,11 @@ class TimeZones extends PluginBase implements Listener {
     #makes the config (important)
     if(!file_exists($this->getDataFolder() . "config.yml")) {
       $this->getLogger()->info("Config.yml file detected!");
+    }else{//if file don't exist, this create it and put "corrector" value
+      $this->config = new Config( $this->getDataFolder() . "config.yml", Config::YAML);
+      $this->config->set("corrector", 0);
+      $this->config->save();
     }
-      
       
       
         $this->getLogger()->info("TimeZones plugin enabled!");
@@ -45,19 +48,6 @@ class TimeZones extends PluginBase implements Listener {
         return true;
         
     }
-    elseif(strtolower($command->getName()) === "tsetup"){
-        
-        $this->getLogger()->info("Making defrault config file content...");
-        $seeClasses = "corrector: 0";
-        file_put_contents($this->getDataFolder() . "config.yml", $seeClasses);
-        $this->getLogger()->info("Command Successful!");
-        }
-    
-    
-    
-    
-
-    return false;
 }
     }
 
