@@ -40,10 +40,31 @@ class TimeZones extends PluginBase implements Listener {
         if ($merid === "AM"){
            $mmrd = "AM";
         }
+        elseif ($merid === "PM"){
+           $mmrd = "PM";
+        }
+        else{
+           $this->getLogger()->warning("The AM/PM is not correct. Set to AM/PM.")
+        }
         $correctHour = date('g');
         $dater = $correctHour + $commanderPackage;
         $timers = date('i:s');
         $this->getLogger()->info($dater . ":" . $timers . $mmrd);
+        
+        #AM PM hour change (not tested)
+        for (;;) {
+         if ($correctHour === "12"){
+             if ($mmrd === "AM"){
+             	$mmrd = "PM";
+             }
+             
+             elseif ($mmrd === "PM"){
+             	$mmrd = "AM";
+             }
+             
+         }
+         
+    }
     }  
     public function onCommand(CommandSender $sender, Command $command, $label, array $args){
     if(strtolower($command->getName()) === "tz"){
