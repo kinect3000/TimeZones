@@ -32,13 +32,18 @@ class TimeZones extends PluginBase implements Listener {
       
         $this->getLogger()->info("TimeZones plugin enabled!");
         
-        $this->getLogger()->info("Current time + date is:");
+        $this->getLogger()->info("Current time is:");
         
         $commanderPackage = $this->getConfig()->get("corrector");
+        $merid = $this->getConfig()->get("meridiem");
+        
+        if ($merid === "AM"){
+           $mmrd = "AM";
+        }
         $correctHour = date('h');
         $dater = $correctHour + $commanderPackage;
         $timers = date('i:s');
-        $this->getLogger()->info($dater . ":" . $timers);
+        $this->getLogger()->info($dater . ":" . $timers . $mmrd);
     }  
     public function onCommand(CommandSender $sender, Command $command, $label, array $args){
     if(strtolower($command->getName()) === "tz"){
