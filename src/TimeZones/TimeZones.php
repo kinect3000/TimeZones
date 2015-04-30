@@ -22,7 +22,7 @@ class TimeZones extends PluginBase implements Listener {
       $this->getLogger()->info("Config.yml file detected!");
     }else{//if file don't exist, this create it and put "corrector" value
       $this->config = new Config( $this->getDataFolder() . "config.yml", Config::YAML);
-      $this->config->set("corrector", 0);
+      $this->config->set("corrector:", 0);
       $this->config->save();
     }
       
