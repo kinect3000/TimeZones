@@ -40,7 +40,7 @@ class TimeZones extends PluginBase implements Listener {
         if ($merid === "AM"){
            $mmrd = "AM";
         }
-        $correctHour = date('h');
+        $correctHour = date('g');
         $dater = $correctHour + $commanderPackage;
         $timers = date('i:s');
         $this->getLogger()->info($dater . ":" . $timers . $mmrd);
@@ -49,7 +49,7 @@ class TimeZones extends PluginBase implements Listener {
     if(strtolower($command->getName()) === "tz"){
         
         $commanderPackage = $this->getConfig()->get("corrector");
-        $correctHour = date('h');
+        $correctHour = date('g');
         $dater = $correctHour + $commanderPackage;
         $timers = date('i:s');
         $sender->sendMessage($dater . ":" . $timers . $mmrd);
