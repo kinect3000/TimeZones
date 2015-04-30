@@ -52,7 +52,7 @@ class TimeZones extends PluginBase implements Listener {
         $correctHour = date('h');
         $dater = $correctHour + $commanderPackage;
         $timers = date('i:s');
-        $sender->sendMessage($dater . ":" . $timers);
+        $sender->sendMessage($dater . ":" . $timers . $mmrd);
         return true;
         
     }
