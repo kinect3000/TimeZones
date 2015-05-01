@@ -44,7 +44,7 @@ class TimeZones extends PluginBase implements Listener {
            $mmrd = "PM";
         }
         else{
-           $this->getLogger()->warning("The AM/PM is not correct. Set to AM/PM.")
+           $this->getLogger()->warning("The AM/PM is not correct. Set to AM/PM.");
         }
         $correctHour = date('g');
         $dater = $correctHour + $commanderPackage;
