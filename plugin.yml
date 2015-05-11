@@ -11,7 +11,4 @@ commands:
   description: "Shows the current time"
   usage: "/time"
   permission: TimeZones.time
- tsetup:
-  description: "Must run on first setup! Important!"
-  usage: "/tsetup"
-  permission: TimeZones.setup
+
