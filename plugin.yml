@@ -9,6 +9,6 @@ author: HotFireyDeath
 commands:
  tz:
   description: "Shows the current time"
-  usage: "/time"
+  usage: "/tz"
   permission: TimeZones.time
 
